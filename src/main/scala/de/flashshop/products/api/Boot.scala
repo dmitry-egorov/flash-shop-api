@@ -20,5 +20,5 @@ object Boot extends App
   val port = Properties.envOrElse("PORT", "8080").toInt
   println("Starting flashshop.products api on port:" + port)
 
-  IO(Http) ? Http.Bind(service, interface = "localhost", port = port)
+  IO(Http) ? Http.Bind(service, interface = "0.0.0.0", port = port)
 }
