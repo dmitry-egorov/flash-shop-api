@@ -1,6 +1,7 @@
-package de.flashshop.products.api
+package de.flashshop.products.web
 
 import akka.actor.Actor
+import de.flashshop.products.infrastructure.StaticProductRepository
 
 // we don't implement our route structure directly in the service actor because
 // we want to be able to test it independently, without having to spin up an actor
@@ -14,4 +15,6 @@ class ProductsServiceActor extends Actor with ProductsService
    // other things here, like request stream processing
    // or timeout handling
    def receive = runRoute(route)
+
+   val productRepository = new StaticProductRepository
  }

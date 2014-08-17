@@ -1,6 +1,6 @@
-package de.flashshop.products.api
+package de.flashshop.products.web
 
-import de.flashshop.products.data.ProductsData
+import de.flashshop.products.infrastructure.StaticProductRepository
 import de.flashshop.products.model.ProductDescriptionList
 import org.specs2.mutable.Specification
 import spray.http.StatusCodes._
@@ -8,6 +8,7 @@ import spray.testkit.Specs2RouteTest
 
 class ProductsServiceSpec extends Specification with Specs2RouteTest with ProductsService
 {
+  val productRepository = new StaticProductRepository
   def actorRefFactory = system
   
   "ProductsService" should {
@@ -36,7 +37,7 @@ class ProductsServiceSpec extends Specification with Specs2RouteTest with Produc
     "return a list of products for GET requests to /products" in {
       Get("/products") ~> route ~>check
       {
-        responseAs[ProductDescriptionList] === ProductsData.all
+        responseAs[ProductDescriptionList] === productRepository.all
       }
     }
   }

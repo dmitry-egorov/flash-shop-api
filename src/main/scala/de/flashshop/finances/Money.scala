@@ -1,4 +1,4 @@
-package de.common.model
+package de.flashshop.finances
 
 case class Money(amount: BigDecimal)
 {
