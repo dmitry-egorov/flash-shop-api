@@ -1,4 +1,4 @@
-package de.flashshop.products.web
+package de.flashshop.showcasing.web
 
 import akka.actor.{ActorSystem, Props}
 import akka.io.IO

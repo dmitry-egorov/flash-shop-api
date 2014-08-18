@@ -1,4 +1,4 @@
-package de.flashshop.products.model
+package de.flashshop.showcasing.model
 
 trait ProductRepository
 {

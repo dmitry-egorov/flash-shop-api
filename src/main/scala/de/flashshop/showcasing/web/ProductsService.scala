@@ -1,10 +1,11 @@
-package de.flashshop.products.web
+package de.flashshop.showcasing.web
 
-import de.flashshop.products.model.ProductRepository
+import de.flashshop.showcasing.model.ProductRepository
 import de.flashshop.spray.SimpleRespondWithDirectives
 import org.json4s.DefaultFormats
 import spray.httpx.Json4sSupport
 import spray.routing.HttpService
+import de.flashshop.BuildInfo
 
 // this trait defines our service behavior independently from the service actor
 trait ProductsService
@@ -12,6 +13,8 @@ trait ProductsService
      with Json4sSupport
      with SimpleRespondWithDirectives
 {
+  val version = BuildInfo.version
+
   val productRepository: ProductRepository
 
   val json4sFormats = DefaultFormats
@@ -21,7 +24,7 @@ trait ProductsService
     val root =
     path("") & get & text & complete
     {
-      "Welcome to products api v0.1!"
+      s"Welcome to showcasing api v$version!"
     }
 
     val products =

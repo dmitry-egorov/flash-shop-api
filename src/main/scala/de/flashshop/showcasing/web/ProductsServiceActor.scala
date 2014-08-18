@@ -1,7 +1,7 @@
-package de.flashshop.products.web
+package de.flashshop.showcasing.web
 
 import akka.actor.Actor
-import de.flashshop.products.infrastructure.StaticProductRepository
+import de.flashshop.showcasing.infrastructure.StaticProductRepository
 
 // we don't implement our route structure directly in the service actor because
 // we want to be able to test it independently, without having to spin up an actor

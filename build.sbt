@@ -8,7 +8,7 @@ version       := "0.1"
 
 scalaVersion  := "2.11.2"
 
-scalacOptions := Seq("-unchecked", "-deprecation", "-encoding", "utf8")
+scalacOptions := Seq("-unchecked", "-deprecation", "-encoding", "utf8", "-feature")
 
 libraryDependencies ++= {
   val akkaV = "2.3.5"
@@ -26,3 +26,11 @@ libraryDependencies ++= {
 }
 
 Revolver.settings
+
+buildInfoSettings
+
+sourceGenerators in Compile <+= buildInfo
+
+buildInfoKeys := Seq[BuildInfoKey](version)
+
+buildInfoPackage := "de.flashshop"

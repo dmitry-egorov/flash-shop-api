@@ -1,7 +1,7 @@
-package de.flashshop.products.web
+package de.flashshop.showcasing.web
 
-import de.flashshop.products.infrastructure.StaticProductRepository
-import de.flashshop.products.model.ProductDescriptionList
+import de.flashshop.showcasing.infrastructure.StaticProductRepository
+import de.flashshop.showcasing.model.ProductDescriptionList
 import org.specs2.mutable.Specification
 import spray.http.StatusCodes._
 import spray.testkit.Specs2RouteTest
