@@ -1,11 +1,10 @@
 package de.flashshop.showcasing.infrastructure
 
 import de.flashshop.showcasing.model._
+import de.flashshop.finances.MoneyImplicits._
 
 class StaticProductRepository extends ProductRepository
 {
-  import de.flashshop.finances.MoneyImplicits._
-
   lazy val all =
   ProductDescriptionList from
   (
